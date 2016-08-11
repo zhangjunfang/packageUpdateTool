@@ -4,7 +4,7 @@
 
 ##使用说明
 ### 第一步：
-  ``` go get -u github.com/zhangjunfang/packageUpdateTool```
+``` go get -u github.com/zhangjunfang/packageUpdateTool```
 ```go
 
 var bufpool *bpool.BufferPool
