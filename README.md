@@ -6,25 +6,13 @@
 ### 第一步：
 ``` go get -u github.com/zhangjunfang/packageUpdateTool```
 ```go
+package main
 
-var bufpool *bpool.BufferPool
+import (
+	"github.com/zhangjunfang/packageUpdateTool/update"
+)
 
 func main() {
-
-    bufpool = bpool.NewBufferPool(48)
-
-}
-
-func someFunction() error {
-
-     // Get a buffer from the pool
-     buf := bufpool.Get()
-     ...
-     ...
-     ...
-     // Return the buffer to the pool
-     bufpool.Put(buf)
-
-     return nil
+	update.Update()
 }
 ```
