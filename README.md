@@ -17,7 +17,8 @@ func main() {
 }
 
 ```
-### 或者直接下载对应可执行文件
-   [window-64](https://github.com/zhangjunfang/packageUpdateTool/packageUpdateTool.exe)  
-   
+### 直接下载对应可执行文件
+   [window-64](https://github.com/zhangjunfang/packageUpdateTool/packageUpdateTool.exe)
    [linux-64](https://github.com/zhangjunfang/packageUpdateTool/packageUpdateTool)
+## email
+   zhangjunfang0505@163.com
