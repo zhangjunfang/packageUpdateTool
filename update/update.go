@@ -9,6 +9,8 @@ import (
 	"strings"
 )
 
+const ()
+
 var (
 	gopath string
 	buffe  bytes.Buffer
@@ -25,21 +27,23 @@ func Update() {
 	buffe.Reset()
 }
 func Iterator(path string, info os.FileInfo, err error) error {
-
 	if len(strings.Split(path, "/")) == depth {
 		return nil
 	}
 	path = strings.Replace(path, "\\", "/", -1)
 	if len(strings.Split(path, "/")) > depth && info.IsDir() && !strings.Contains(path, ".git") {
-		fmt.Println(strings.Replace(path, buffe.String(), "", -1))
-		cmd := exec.Command("go", "get", "-u", "-v", strings.Replace(path, buffe.String(), "", -1))
-		ff, e := cmd.CombinedOutput()
+		url := strings.Replace(path, buffe.String(), "", -1)
+		//		go func(l string) {
+		cmd := exec.Command("go", "get", "-u", "-v", url)
+		_, e := cmd.CombinedOutput()
 		if e != nil {
-			fmt.Printf("  operation failure : %s", e.Error())
+			fmt.Printf("#######  operation failure : %s", e.Error())
 			//return errors.New("发现错误")
 		} else {
-			fmt.Println(" Successful operation " + string(ff))
+			fmt.Println("not prefix  ", url)
 		}
+
+		//		}(url)
 	}
 	return nil
 }
